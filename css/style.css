@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Outfit:wght@800&family=Rubik+Mono+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap');
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*                   задний фон*******************************/
+.gradient {
+    position: relative;
+    margin: 0 auto;
+    width: 2296px;
+    height: 1448px;
+    background-image: linear-gradient(135deg, #FF8484, #F6C668);
+    background-repeat: no-repeat;
+    background-size: auto;
+
+}
+
+/*               общее пространство******************/
+.screen {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    left: 188px;
+    top: 184px;
+
+    background: #FFFFFF;
+    border: 20px solid #000000;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+/*            строка навигации**********************/
+.nav {
+    margin: 65px 81px 87px 81px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: -4px;
+}
+
+.logo span {
+    font-family: 'Outfit';
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #FFCC17 0%, #1796CC 50%, #E90154 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 20px;
+}
+
+.nav_items {
+    display: flex;
+    justify-content: center;
+    column-gap: 70px;
+    align-items: center;
+}
+
+.nav_item {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000;
+    text-decoration: none;
+    transition: color .1s ease-in;
+}
+
+.nav_item:hover,
+.nav_item.active {
+    background: linear-gradient(180deg, #EC368D 0%, #D72828 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icons {
+    margin-top: -2.5px;
+}
+
+.icons .a:hover {
+    fill: #e12e59;
+}
+
+.icons a+a {
+    padding-left: 53px;
+}
+
+/*               Основной контент********************/
+.workspace {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.joystick {
+    position: absolute;
+    left: 324px;
+    top: -192px;
+}
+
+/*          правая половина*************************/
+.right_half {
+    position: relative;
+}
+
+.red_square {
+    width: 834px;
+    height: 696px;
+    background: linear-gradient(180deg, #EC368D 0%, #D72828 100%);
+    border: 1px solid #000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px 0px 0px 40px;
+    position: relative;
+
+
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+/*      додоть карточку     */
+.add_to_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 52px;
+    position: relative;
+    z-index: 2;
+}
+
+.add_to_card img {
+    border-radius: 50%;
+}
+
+.add_to_card img:hover {
+    border-radius: 50%;
+    box-shadow: 0px 0px 55px rgb(255, 255, 255);
+    transition: all .3s;
+}
+
+.add_to_card p {
+    padding-top: 16px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*      круглеши меняющие номер на картке         */
+.number_balls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 74px;
+    margin-left: 136px;
+    position: relative;
+    z-index: 2;
+}
+
+.number_balls span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+}
+
+.number_balls span:hover {
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 11px 3px rgb(255, 255, 255);
+    transition: all .2s;
+    cursor: pointer;
+}
+
+/*      новое       */
+
+.number_balls label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+/*          Скриваю радіо бокси              */
+.radio_box {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    padding-left: 20px;
+}
+
+/*      стилизирую новие кнобки */
+.radio_style {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+/*                 задаю кружечек вокруг вибраной радио кнобки           */
+.radio_box:checked~.radio_style::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ДЕЛАЮ ЧТО БИ КРУЖОЧЕК ВИБИРАВСЯ */
+.form__label {
+    display: none;
+    cursor: default;
+}
+
+.radio_box:checked~.form__label {
+    display: block;
+}
+
+/*  стидлизую кружочек */
+
+.img {
+    display: inline-block;
+    position: absolute;
+    left: -300px;
+    top: 60px;
+}
+
+
+/*              Левая половина************************/
+
+
+.left_half {
+    margin: 226px 0px 0px 197px;
+    position: relative;
+}
+
+/* полосочка */
+.left_half::after {
+    content: "";
+    position: absolute;
+    left: -66px;
+    top: 0px;
+    width: 18px;
+    height: 211px;
+    background: linear-gradient(180deg, #EC368D 0%, #D72828 100%);
+}
+
+/* надпись полупрозрачная */
+.left_half::before {
+    content: "DUALSHOCK4";
+    font-family: 'Rubik Mono One';
+    font-size: 94px;
+    line-height: 119px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    left: 66px;
+    top: -160px;
+    z-index: 0;
+}
+
+/*       Надписи     */
+.left_half h1 {
+    font-size: 48px;
+    line-height: 1.23;
+    text-transform: uppercase;
+    padding-bottom: 13px;
+}
+
+.t_first {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 35px;
+    color: #727272;
+}
+
+.t_second {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #727272;
+    padding-bottom: 22px;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    padding-bottom: 59px;
+}
+
+/*      кнобка      */
+.btn {
+    width: 395px;
+    height: 88px;
+    background: linear-gradient(180deg, #EC368D 0%, #D72828 100%);
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 94px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    font-size: 24px;
+}
+
+.btn:hover {
+    font-size: 25px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    transition: all .3s;
+}
+
+.btn span {
+    font-weight: 700;
+    line-height: 29px;
+    padding-right: 20px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/*      навигация        */
+.workspace_nav ul {
+    width: 271px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 62px;
+    position: relative;
+    z-index: 2;
+}
+
+.w_n_item {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+}
+
+.w_n_item:hover,
+.w_n_item.active {
+    background: linear-gradient(90deg, #FF51D9 0%, #F84872 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*        круглеши          */
+.footer {
+    position: relative;
+    z-index: 2;
+}
+
+.inner_balls {
+    margin-right: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.balls {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.balls span {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+.balls span:hover {
+    box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.436);
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.blue {
+    background-color: #1796CC;
+}
+
+.green {
+    background-color: #1DD100;
+}
+
+.red {
+    background-color: #B50000;
+}
+
+.pink {
+    background-color: #F84872;
+}
+
+.yellow {
+    background-color: #FFCC17;
+}
+
+/*      social          */
+
+.inner_social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 96px;
+}
+
+.inner_social a+a {
+    padding-left: 80px;
+}
+
+.grey_line {
+    margin-right: 60px;
+    margin-bottom: 3px;
+    width: 363px;
+    height: 0px;
+    border-radius: 10px;
+    background-color: #B3B3B3;
+    border: 1.5px solid #B3B3B3;
+}
